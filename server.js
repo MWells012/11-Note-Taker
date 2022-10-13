@@ -1,7 +1,7 @@
 // Dependencies
 const express = require('express');
-const ApiRoutes = require('./routes/ApiRoutes');
-const NoteRoutes = require('./routes/NoteRoutes');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 const app = express();
 
 // Set PORT
@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
-app.use('/api', ApiRoutes);
-app.use('/notes', NoteRoutes);
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 // Listener
 app.listen(PORT, () => {
