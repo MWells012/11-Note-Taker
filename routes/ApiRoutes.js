@@ -2,12 +2,14 @@ const router = require("express").Router();
 const path = require("path");
 const db = require("../db/db.json");
 const fs = require ("fs");
+const { json } = require("express");
+
 console.log(db);
 
-router.get("/api/notes", (req, res) => {
+router.get("/notes", (req, res) => {
     fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (error, notes) => {
       if (error) {
-        return console.log("error: could not get note")
+        return console.log("error: we could not get your note")
       }
       res.json(JSON.parse(notes))
     })
@@ -15,7 +17,7 @@ router.get("/api/notes", (req, res) => {
 
 
 router.post("/notes", (req, res) => {
-  const notes = JSON.parse(fs.readFileSync("../db/db.json"));
+  const notes = JSON.parse(fs.readFileSync("./db/db.json"));
   const newNotes = req.body;
   if (notes.length === 0) {
     newNotes.id = 1
@@ -23,7 +25,7 @@ router.post("/notes", (req, res) => {
     newNotes.id = notes.length + 1;
   }
   notes.push(newNotes);
-  fs.writeFileSync("../db/db.json", JSON.stringify(notes), (err) => {
+  fs.writeFileSync("./db/db.json", JSON.stringify(notes), (err) => {
     if(err) {
       console.log("error: could not add note")
     }
@@ -32,16 +34,29 @@ router.post("/notes", (req, res) => {
   console.log("new note has been added")
 });
 
-router.delete("/notes/:id", (req, res) => {
+router.delete("/api/notes/:id", function (req, res) => {
+  const deleteNote = req.params.id;
 
-  fs.readFile("..db/db.json", (err, data) => {
+  fs.readFile("...db/db.json", (err, data) => {
     if (err) throw err;
 
-    noteData = JSON.parse(data)
-  })
+    noteData = JSON.parse(data);
+
+    for (let i = 0; i < noteData.length; i++) {
+      if (noteData[i].id == deleteNote) {
+        noteData.splice([i], 1);
+      }
+    }
+    newNoteData = JSON.stringify(noteData);
+    fs.writeFile(".../db/json.db", newNoteData, (err, data) => {
+      if (err) {
+        console.log(" there was an error in deleting your note")
+      } else {
+        res.json(data)
+        console.log(`note ${deleteNote} note has been deleted!`)
+      }
+    });
+  });
 });
-
-
-
 
 module.exports = router;
