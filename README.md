@@ -22,10 +22,10 @@ This app can be run in 2 different ways, via Heroku or locally.
 - To run application locally from your terminal follow these steps:
 a. in terminal run `npm i` to install all dependencies
 b. run `npm start` to start the application
-c. view the app via the servoer on http://localhost:3001
+c. view the app via the server on http://localhost:3001
 
 # Usage
-
+The note taker app is an application available for a person to help keep all their tasks in one spot. There is a prompt on the screen 
 
 # Tests
 To test this application you will need to use Jest, to run the test in your terminal you will need to type `npm run test`.
