@@ -31,3 +31,6 @@ The note taker app is an application available for a person to help keep all the
 To test this application you will need to use Jest, to run the test in your terminal you will need to type `npm i` to install all the dependencies needed then run `npm start` in the terminal. If the termainl is successful in deploying the code locally the terminal will respond with the statement `API Server is ready on port 3001`.
 
 # Mock-Up
+The following shows a photo of the final product once a new note is added and a video showing how to run the application via the terminal of VS Code and what it looks like locally via the chrome browser.
+[https://github.com/MWells012/11-Note-Taker/blob/main/images/Screen%20Shot%202022-12-03%20at%2011.47.15%20PM.png]
+[https://github.com/MWells012/11-Note-Taker/blob/main/images/Assignment%2011.mp4]
