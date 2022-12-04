@@ -28,6 +28,6 @@ c. view the app via the server on http://localhost:3001
 The note taker app is an application available for a person to help keep all their tasks in one spot. On the initial screen once running the program locally there is a button to click in the middle of the screen that will take you to the note taking app. From there you are prompted on the screen to add a new note with a title.
 
 # Tests
-To test this application you will need to use Jest, to run the test in your terminal you will need to type `npm start`.
+To test this application you will need to use Jest, to run the test in your terminal you will need to type `npm i` to install all the dependencies needed then run `npm start` in the terminal. If the termainl is successful in deploying the code locally the terminal will respond with the statement `API Server is ready on port 3001`.
 
 # Mock-Up
