@@ -25,9 +25,9 @@ b. run `npm start` to start the application
 c. view the app via the server on http://localhost:3001
 
 # Usage
-The note taker app is an application available for a person to help keep all their tasks in one spot. There is a prompt on the screen 
+The note taker app is an application available for a person to help keep all their tasks in one spot. On the initial screen once running the program locally there is a button to click in the middle of the screen that will take you to the note taking app. From there you are prompted on the screen to add a new note with a title.
 
 # Tests
-To test this application you will need to use Jest, to run the test in your terminal you will need to type `npm run test`.
+To test this application you will need to use Jest, to run the test in your terminal you will need to type `npm start`.
 
 # Mock-Up
